@@ -1,4 +1,4 @@
-# Anime.py (Clon Nativo de ani-cli en Python) 🍿
+# neowind (Clon Nativo de ani-cli en Python) 🍿
 
 Una potente herramienta de línea de comandos (CLI) multiplataforma que te permite buscar y reproducir anime directamente desde tu terminal de forma rápida y sencilla. Es una alternativa minimalista en Python inspirada en `ani-cli`.
 
