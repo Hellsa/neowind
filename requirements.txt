@@ -1,0 +1,3 @@
+anipy-cli>=3.8.10
+pexpect>=4.9.0
+wepexpect>=1.0.0; sys_platform == 'win32'

@@ -1,0 +1,17 @@
+# Configuración de entornos de Python y Cache
+__pycache__/
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Ignorar la posible instancia de pruebas o temporales
+test_env/
+
+# Editor y dependencias de OS
+.vscode/
+.idea/
+.DS_Store
