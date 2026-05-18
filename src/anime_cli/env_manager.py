@@ -42,7 +42,7 @@ def install_dependencies(venv_dir: Path):
         print("[*] (Tomará unos segundos dependiendo de tu conexión)\n")
         try:
             subprocess.check_call([pip_cmd, "install", "--upgrade", "pip", "setuptools", "wheel"])
-            subprocess.check_call([pip_cmd, "install", "anipy-cli", "pexpect", "wepexpect"])
+            subprocess.check_call([pip_cmd, "install", "anipy-cli", "pexpect", "pexpect"])
             print("\n[+] Motor instalado correctamente.\n")
         except subprocess.CalledProcessError as e:
             print(f"\n[X] Hubo un error instalando las dependencias. Verifica tu conexión a internet o compiladores del sistema.")

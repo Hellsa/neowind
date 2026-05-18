@@ -21,14 +21,17 @@ No necesitas hacer configuraciones complejas. Solo clona este repositorio o desc
 # Uso básico:
 python run.py "nombre del anime"
 
-# Ejemplo:
-python run.py "bleach"
+# Uso avanzado (Calidad, Sub/Dub, y atajos de búsqueda):
+python run.py "bleach" -q 1080             # Especificar calidad (1080, 720, best, worst)
+python run.py -so "jujutsu kaisen"         # Forzar solo subtítulos (-so)
+python run.py -d "dragon ball"             # Forzar doblaje (-d)
+python run.py -s "bleach:1-5:sub"          # Saltar menús: Buscar anime, rango de episodios y formato
 ```
 
-El script se encargará automáticamente de revisar e instalar en segundo plano las dependencias (como `anipy-cli` y `pexpect`) durante la primera ejecución.
+El script se encargará automáticamente de revisar e instalar en segundo plano las dependencias (como `anipy-cli`) durante la primera ejecución.
 
 ## 🛠 ¿Cómo funciona bajo el capó?
-El núcleo de la aplicación utiliza [anipy-cli](https://github.com/anipy-cli/anipy-cli) como motor robusto de búsqueda y reproducción. Este script modular (`run.py` invoca al paquete en `src/anime_cli/`) asume el rol de automatizador interactivo (Wrapper) usando `pexpect`/`wepexpect`, lo que permite bypassar los prompts primarios inyectando consultas de terminal para que el usuario sea dirigido instantáneamente a la pantalla de resolución (TUI) de la búsqueda.
+El núcleo de la aplicación utiliza [anipy-cli](https://github.com/anipy-cli/anipy-cli) como motor robusto de búsqueda y reproducción. Este script modular (`run.py` invoca al paquete en `src/anime_cli/`) asume el rol de Wrapper inyectando de forma nativa los argumentos del sistema (mediante `subprocess`) hacia el CLI de anipy. De esta forma la integración con la terminal original es perfecta, permitiendo comandos complejos y uso multiplataforma (Windows y Linux) sin depender de librerías extrañas de automatización de TTY. Adicionalmente, el script gestiona de forma oculta y silenciosa las rutas relativas para ubicar el reproductor `mpv.exe` dentro de su propio entorno.
 
 ##  Contribuciones
 ¡Las propuestas de mejora, ideas y pull requests de cualquier índole son 100% bienvenidos! Siéntete libre de clonar y testear mejoras, sobre todo en manejo de excepciones de terminal para Windows.

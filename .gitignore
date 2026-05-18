@@ -15,3 +15,6 @@ test_env/
 .vscode/
 .idea/
 .DS_Store
+
+bin/
+download_mpv.ps1
